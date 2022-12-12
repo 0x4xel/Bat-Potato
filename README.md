@@ -1,7 +1,7 @@
 # Bat-Potato
 
 
-# usage
+# USAGE
 
 Open Bat-Potato.py and change de default values
 
