@@ -54,3 +54,7 @@ As there are other alternatives to perform Juicy Privesc (https://github.com/Tsu
 https://user-images.githubusercontent.com/48086822/207419803-827a39ff-9a05-41d8-a393-3733eaa4f1f5.mp4
 
 If video is not displayed, you can also click on this link: https://youtu.be/QL1NiryxGis
+
+# Credits
+
+prhp for the fantastic logo: https://www.reddit.com/r/krita/comments/prhpl0/bat_potato/
