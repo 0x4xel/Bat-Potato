@@ -1,5 +1,6 @@
 # Bat-Potato
 
+![my4b1hlfajo71](https://user-images.githubusercontent.com/48086822/207264719-7d9952f9-5419-47a6-93cc-4fb076d517f7.png)
 
 # USAGE
 
